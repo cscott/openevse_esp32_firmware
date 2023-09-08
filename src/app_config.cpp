@@ -121,6 +121,9 @@ uint8_t led_brightness;
 // RFID storage
 String rfid_storage;
 
+// PIN storage
+String pin_storage;
+
 long max_current_soft;
 
 // Scheduler settings
@@ -214,6 +217,9 @@ ConfigOpt *opts[] =
 // RFID storage
   new ConfigOptDefenition<String>(rfid_storage, "", "rfid_storage", "rs"),
 
+// PIN storage
+  new ConfigOptDefenition<String>(pin_storage, "", "pin_storage", "ps"),
+
 #if RGB_LED
 // LED brightness
   new ConfigOptDefenition<uint8_t>(led_brightness, LED_DEFAULT_BRIGHTNESS, "led_brightness", "lb"),
@@ -243,6 +249,7 @@ ConfigOpt *opts[] =
   new ConfigOptVirtualBool(flagsOpt, CONFIG_OCPP_ACCESS_SUSPEND, CONFIG_OCPP_ACCESS_SUSPEND, "ocpp_suspend_evse", "ops"),
   new ConfigOptVirtualBool(flagsOpt, CONFIG_OCPP_ACCESS_ENERGIZE, CONFIG_OCPP_ACCESS_ENERGIZE, "ocpp_energize_plug", "opn"),
   new ConfigOptVirtualBool(flagsOpt, CONFIG_RFID, CONFIG_RFID, "rfid_enabled", "rf"),
+  new ConfigOptVirtualBool(flagsOpt, CONFIG_PIN, CONFIG_PIN, "pin_enabled", "pin"),
   new ConfigOptVirtualBool(flagsOpt, CONFIG_FACTORY_WRITE_LOCK, CONFIG_FACTORY_WRITE_LOCK, "factory_write_lock", "fwl"),
   new ConfigOptVirtualBool(flagsOpt, CONFIG_THREEPHASE, CONFIG_THREEPHASE, "is_threephase", "itp"),
   new ConfigOptVirtualBool(flagsOpt, CONFIG_WIZARD, CONFIG_WIZARD, "wizard_passed", "wzp"),

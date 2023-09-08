@@ -95,6 +95,7 @@ x-examples:
     ocpp_idtag: '0E000000'
     ocpp_auth_offline: true
     rfid_enabled: false
+    pin_enabled: false
     mqtt_protocol: mqtt
     is_threephase: false
     wizard_passed: false

@@ -72,6 +72,9 @@ extern String ocpp_idtag;
 // RFID storage
 extern String rfid_storage;
 
+// PIN storage
+extern String pin_storage;
+
 // Time
 extern String time_zone;
 
@@ -127,6 +130,7 @@ extern uint32_t flags;
 #define CONFIG_THREEPHASE           (1 << 24)
 #define CONFIG_WIZARD               (1 << 25)
 #define CONFIG_DEFAULT_STATE        (1 << 26)
+#define CONFIG_PIN                  (1 << 27)
 
 #define INITIAL_CONFIG_VERSION  1
 
@@ -200,6 +204,10 @@ inline bool config_vehicle_range_miles() {
 
 inline bool config_rfid_enabled() {
   return CONFIG_RFID == (flags & CONFIG_RFID);
+}
+
+inline bool config_pin_enabled() {
+  return CONFIG_PIN == (flags & CONFIG_PIN);
 }
 
 inline bool config_factory_write_lock() {

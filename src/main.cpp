@@ -57,6 +57,10 @@
 #include "pn532.h"
 #endif
 
+#if defined(ENABLE_CAP1214)
+#include "cap1214.h"
+#endif
+
 #include "LedManagerTask.h"
 #include "event_log.h"
 #include "evse_man.h"
@@ -134,6 +138,9 @@ void setup()
 #if defined(ENABLE_PN532)
   pn532.begin();
   rfid.begin(evse, pn532);
+#elif defined(ENABLE_CAP1214)
+  cap1214.begin();
+  rfid.begin(evse, cap1214);
 #else
   rfid.begin(evse, rfidNullDevice);
 #endif

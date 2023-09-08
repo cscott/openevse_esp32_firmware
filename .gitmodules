@@ -1,4 +1,4 @@
 [submodule "gui-v2"]
 	path = gui-v2
-	url = https://github.com/OpenEVSE/openevse-gui-v2
-	branch = master
+	url = https://github.com/cscott/openevse-gui-v2
+	branch = csa-pin
